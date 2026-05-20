@@ -1,5 +1,6 @@
+import deleteIcon from "../assets/delete-icon.png";
 function DeleteSkill() {
-  return <button>Supprimer une compétence</button>;
+  return <img src={deleteIcon}></img>;
 }
 
 export default DeleteSkill;

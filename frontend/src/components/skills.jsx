@@ -1,17 +1,10 @@
-import DisplaySubSkills from "./sub-skills";
-import AddSkill from "./add-button";
-import DeleteSkill from "./delete-button";
+import Skill from "./skill";
 
 function DisplaySkills({ skills, subSkills }) {
   return (
-    skills && //conditionnel render
+    skills &&
     skills.map((skill) => (
-      <div key={skill.id} className="skill-content">
-        <div className="skill-title">{skill.name}</div>
-        <DisplaySubSkills subSkills={subSkills} skillId={skill.id} />
-        <AddSkill></AddSkill>
-        <DeleteSkill></DeleteSkill>
-      </div>
+      <Skill key={skill.id} skill={skill} subSkills={subSkills} />
     ))
   );
 }
