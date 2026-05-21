@@ -1,9 +1,10 @@
 import { useState } from "react";
 import DisplaySubSkills from "./sub-skills";
 import AddSkill from "./add-button";
-import DeleteSkill from "./delete-button";
 import ToggleSkills from "./toggle-skills";
 import ProgressBar from "./progress-bar";
+
+import "./skill.css";
 
 function Skill({ skill, subSkills }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,7 @@ function Skill({ skill, subSkills }) {
   const subSkillsList = subSkills.filter(
     (subSkill) => subSkill.skills_id === skill.id,
   );
-  console.log("La liste des usbskills par id:", subSkillsList);
+  console.log("La liste des subskills par id:", subSkillsList);
   const total = subSkillsList.length;
   console.log("Total de subSkills liés:", total);
   const validated = subSkillsList.filter(
@@ -28,9 +29,10 @@ function Skill({ skill, subSkills }) {
       <ToggleSkills isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
       {isOpen && (
         <>
+          <div className="add-skills-contener">
+            <AddSkill />
+          </div>
           <DisplaySubSkills subSkills={subSkills} skillId={skill.id} />
-          <AddSkill />
-          <DeleteSkill />
         </>
       )}
     </div>

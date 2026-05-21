@@ -1,0 +1,46 @@
+/* ─── MODAL AJOUT SUB-SKILL ──────────────────────────── */
+.modal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: var(--bg-card);
+  border: var(--border-bright);
+  width: 100%;
+}
+
+.modal input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: var(--border-bright);
+  color: var(--color-text);
+  font-family: var(--font-retro);
+  font-size: 17px;
+  padding: 4px 6px;
+  outline: none;
+}
+
+.modal input::placeholder {
+  color: var(--color-muted);
+}
+
+.modal button {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: var(--color-primary);
+  background: transparent;
+  border: var(--border-bright);
+  padding: 6px 10px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.modal button:hover {
+  background: var(--color-primary);
+  color: var(--bg-dark);
+}

@@ -1,0 +1,44 @@
+/* ─── SKILL CARD ─────────────────────────────────────── */
+.skill-content {
+  background: var(--bg-panel);
+  border: var(--border);
+  padding: 10px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.15s;
+  position: relative;
+}
+
+.skill-content:hover {
+  border-color: var(--color-primary);
+}
+
+/* ─── NOM DE LA COMPÉTENCE ───────────────────────────── */
+.skill-title {
+  font-family: var(--font-retro);
+  font-size: 20px;
+  color: var(--color-text);
+  min-width: 160px;
+  letter-spacing: 0.5px;
+}
+
+/* ─── SOUS-COMPÉTENCES (bloc qui s'ouvre) ────────────── */
+.skill-subskills {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 6px;
+  border-top: var(--border);
+  margin-top: 4px;
+}
+
+/* ─── ACTIONS (add + delete) ─────────────────────────── */
+.skill-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-left: auto;
+}

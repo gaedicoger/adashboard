@@ -1,6 +1,11 @@
 import deleteIcon from "../assets/delete-icon.png";
+
 function DeleteSkill() {
-  return <img src={deleteIcon}></img>;
+  return (
+    <div className="icon-btn delete-btn">
+      <img src={deleteIcon}></img>
+    </div>
+  );
 }
 
 export default DeleteSkill;

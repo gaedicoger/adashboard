@@ -1,10 +1,5 @@
 function ProgressBar({ percentage }) {
-  return (
-    <label>
-      Progression
-      <progress value={percentage} max="100" />
-    </label>
-  );
+  return <progress value={percentage} max="100" />;
 }
 
 export default ProgressBar;

@@ -1,0 +1,25 @@
+/* ─── BARRE DE PROGRESSION ───────────────────────────── */
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 180px;
+  height: 10px;
+  border: var(--border);
+  background: var(--bg-card);
+}
+
+/* Fond de la barre (navigateurs Webkit) */
+progress::-webkit-progress-bar {
+  background: var(--bg-card);
+}
+
+/* Remplissage */
+progress::-webkit-progress-value {
+  background: var(--color-primary);
+  position: relative;
+  transition: width 0.4s ease;
+}
+
+progress::-moz-progress-bar {
+  background: var(--color-primary);
+}

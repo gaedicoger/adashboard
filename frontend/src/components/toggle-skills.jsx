@@ -2,9 +2,13 @@
 import toggleIconDown from "../assets/double-down-icon.png";
 import toggleIconUp from "../assets/double-up-icon.png";
 
+import "./toggle-skills.css";
+
 function ToggleSkills({ isOpen, onToggle }) {
   return (
-    <img src={isOpen ? toggleIconUp : toggleIconDown} onClick={onToggle} />
+    <div className="toggle-skills">
+      <img src={isOpen ? toggleIconUp : toggleIconDown} onClick={onToggle} />
+    </div>
   );
 }
 

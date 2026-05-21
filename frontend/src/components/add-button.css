@@ -1,0 +1,31 @@
+CSS
+/* ─── WRAPPER TOGGLE ─────────────────────────────────── */
+.toggle-content {
+  position: relative;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* ─── BOUTON ICÔNE (commun add + delete) ─────────────── */
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.1s;
+}
+
+.icon-btn img:hover {
+  transform: scale(1.15);
+}
+
+/* ─── DELETE : hover rouge ───────────────────────────── */
+.delete-btn img:hover {
+  filter: hue-rotate(260deg) saturate(2);
+}
