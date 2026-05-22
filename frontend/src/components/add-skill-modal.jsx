@@ -20,6 +20,7 @@ function AddSkillModal({ onClose, skillId, loadStart }) {
             await addSubSkill(skillId, description, false);
             loadStart();
             setDescription("");
+            onClose();
           }}
         >
           Valider

@@ -18,7 +18,7 @@
 /* ─── NOM DE LA COMPÉTENCE ───────────────────────────── */
 .skill-title {
   font-family: var(--font-retro);
-  font-size: 20px;
+  font-size: 25px;
   color: var(--color-text);
   min-width: 160px;
   letter-spacing: 0.5px;

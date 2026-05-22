@@ -1,10 +1,12 @@
 /* ─── TOGGLE (flèche haut/bas) ───────────────────────── */
 .toggle-skills img {
-  width: 18px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   opacity: 0.5;
-  transition: opacity 0.15s, transform 0.2s;
+  transition:
+    opacity 0.15s,
+    transform 0.2s;
   image-rendering: pixelated;
 }
 

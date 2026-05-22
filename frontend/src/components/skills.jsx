@@ -2,16 +2,19 @@ import Skill from "./skill";
 
 function DisplaySkills({ skills, subSkills, setSubSkills, loadStart }) {
   return (
-    skills &&
-    skills.map((skill) => (
-      <Skill
-        key={skill.id}
-        skill={skill}
-        subSkills={subSkills}
-        setSubSkills={setSubSkills}
-        loadStart={loadStart}
-      />
-    ))
+    <div className="skills-list">
+      <h2 className="skills-title">⚔️ Compétences</h2>
+      {skills &&
+        skills.map((skill) => (
+          <Skill
+            key={skill.id}
+            skill={skill}
+            subSkills={subSkills}
+            setSubSkills={setSubSkills}
+            loadStart={loadStart}
+          />
+        ))}
+    </div>
   );
 }
 

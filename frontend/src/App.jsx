@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { callSkills, callSubSkills } from "./api/call-api";
 import DisplaySkills from "./components/skills.jsx";
+import CharacterPanel from "./components/character-panel.jsx";
 import "./App.css";
 
 function App() {
@@ -20,12 +21,15 @@ function App() {
 
   return (
     <>
-      <DisplaySkills
-        skills={skills}
-        subSkills={subSkills}
-        setSubSkills={setSubSkills} //prop drilling pour mettre à jour le tableau en local
-        loadStart={loadStart} //prop drilling pour refetch a chaque ajout de subskills
-      />
+      <div className="app-layout">
+        <CharacterPanel />
+        <DisplaySkills
+          skills={skills}
+          subSkills={subSkills}
+          setSubSkills={setSubSkills} //prop drilling pour mettre à jour le tableau en local
+          loadStart={loadStart} //prop drilling pour refetch a chaque ajout de subskills
+        />
+      </div>
     </>
   );
 }

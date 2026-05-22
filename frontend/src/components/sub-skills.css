@@ -1,18 +1,21 @@
 /* ─── SOUS-COMPÉTENCE ────────────────────────────────── */
 .sub-skills-content {
+  width: 100%;
   font-family: var(--font-retro);
-  font-size: 17px;
+  font-size: 20px;
   color: var(--color-accent);
   padding: 3px 0 3px 16px;
   border-left: 2px solid var(--color-muted);
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
 }
 
 .sub-skills-content::before {
-  content: '▸';
+  content: "▸";
   font-size: 13px;
   color: var(--color-muted);
 }
@@ -28,6 +31,6 @@
 }
 
 .sub-skills-content.validated::before {
-  content: '✓';
+  content: "✓";
   color: var(--color-teal);
 }

@@ -1,24 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
 
 /* ─── VARIABLES GLOBALES ─────────────────────────────── */
 :root {
-  --bg-dark:        #1a0933;
-  --bg-panel:       #2e1065;
-  --bg-card:        #0f0520;
-  --color-primary:  #7c3aed;
-  --color-accent:   #a78bfa;
-  --color-text:     #e9d5ff;
-  --color-muted:    #4c1d95;
-  --color-gold:     #fbbf24;
-  --color-teal:     #2dd4bf;
-  --border:         1px solid var(--color-muted);
-  --border-bright:  1px solid var(--color-primary);
-  --font-pixel:     'Press Start 2P', monospace;
-  --font-retro:     'VT323', monospace;
+  --bg-dark: #1a0933;
+  --bg-panel: #2e1065;
+  --bg-card: #0f0520;
+  --color-primary: #7c3aed;
+  --color-accent: #a78bfa;
+  --color-text: #e9d5ff;
+  --color-muted: #4c1d95;
+  --color-gold: #fbbf24;
+  --color-teal: #2dd4bf;
+  --border: 1px solid var(--color-muted);
+  --border-bright: 1px solid var(--color-primary);
+  --font-pixel: "Press Start 2P", monospace;
+  --font-retro: "VT323", monospace;
 }
 
 /* ─── RESET ──────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -38,7 +40,26 @@ body {
   display: flex;
   min-height: 100vh;
   background-image:
-    linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
   background-size: 20px 20px;
+}
+
+.app-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.app-layout > :last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills-title {
+  font-family: var(--font-retro);
+  font-size: 30px;
 }
