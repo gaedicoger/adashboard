@@ -1,43 +1,57 @@
-/* ─── MODAL AJOUT SUB-SKILL ──────────────────────────── */
-.modal {
+/* ─── OVERLAY (fond sombre) ──────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 2, 20, 0.75);
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-  padding: 8px 10px;
-  background: var(--bg-card);
-  border: var(--border-bright);
-  width: 100%;
+  justify-content: center;
+  z-index: 100;
 }
 
+/* ─── FENÊTRE MODALE ─────────────────────────────────── */
+.modal {
+  background: var(--bg-panel);
+  border: var(--border-bright);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 320px;
+}
+
+/* ─── INPUT ──────────────────────────────────────────── */
 .modal input {
-  flex: 1;
-  background: transparent;
+  background: var(--bg-card);
   border: none;
   border-bottom: var(--border-bright);
   color: var(--color-text);
   font-family: var(--font-retro);
-  font-size: 17px;
-  padding: 4px 6px;
+  font-size: 20px;
+  padding: 8px 6px;
   outline: none;
+  width: 100%;
 }
 
 .modal input::placeholder {
   color: var(--color-muted);
 }
 
+/* ─── BOUTON VALIDÉ ──────────────────────────────────── */
 .modal button {
   font-family: var(--font-pixel);
   font-size: 7px;
   color: var(--color-primary);
   background: transparent;
   border: var(--border-bright);
-  padding: 6px 10px;
+  padding: 10px;
   cursor: pointer;
   letter-spacing: 1px;
   transition:
     background 0.15s,
     color 0.15s;
+  align-self: flex-end;
 }
 
 .modal button:hover {

@@ -6,7 +6,7 @@ import ProgressBar from "./progress-bar";
 
 import "./skill.css";
 
-function Skill({ skill, subSkills }) {
+function Skill({ skill, subSkills, setSubSkills, loadStart }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const subSkillsList = subSkills.filter(
@@ -30,9 +30,14 @@ function Skill({ skill, subSkills }) {
       {isOpen && (
         <>
           <div className="add-skills-contener">
-            <AddSkill />
+            <AddSkill skillId={skill.id} loadStart={loadStart} />
           </div>
-          <DisplaySubSkills subSkills={subSkills} skillId={skill.id} />
+          <DisplaySubSkills
+            subSkills={subSkills}
+            skillId={skill.id}
+            setSubSkills={setSubSkills}
+            loadStart={loadStart}
+          />
         </>
       )}
     </div>

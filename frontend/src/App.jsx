@@ -20,7 +20,12 @@ function App() {
 
   return (
     <>
-      <DisplaySkills skills={skills} subSkills={subSkills} />
+      <DisplaySkills
+        skills={skills}
+        subSkills={subSkills}
+        setSubSkills={setSubSkills} //prop drilling pour mettre à jour le tableau en local
+        loadStart={loadStart} //prop drilling pour refetch a chaque ajout de subskills
+      />
     </>
   );
 }

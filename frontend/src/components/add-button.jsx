@@ -4,7 +4,7 @@ import addIcon from "../assets/add-icon.png";
 
 import "./add-button.css";
 
-function AddSkill() {
+function AddSkill({ skillId, loadStart }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -13,7 +13,13 @@ function AddSkill() {
         <div className="icon-btn">
           <img src={addIcon} onClick={() => setIsOpen(!isOpen)} />
         </div>
-        {isOpen && <AddSkillModal />}
+        {isOpen && (
+          <AddSkillModal
+            skillId={skillId}
+            onClose={() => setIsOpen(false)}
+            loadStart={loadStart}
+          />
+        )}
       </div>
     </>
   );

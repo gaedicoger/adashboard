@@ -28,3 +28,25 @@ export async function callSubSkills() {
     console.error("Erreur:", error);
   }
 }
+
+export async function updateSubSkill(id, validated) {
+  const response = await fetch(`http://localhost:3000/sub_skills/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ validated }),
+  });
+  return response.json();
+}
+
+export async function addSubSkill(skillId, description, validated) {
+  const response = await fetch(`http://localhost:3000/sub_skills/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ skills_id: skillId, description, validated }),
+  });
+  return response.json();
+}

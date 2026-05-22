@@ -1,20 +1,20 @@
 import "./sub-skills.css";
 
-import DeleteSkill from "./delete-button";
+import DisplaySubSkill from "./sub-skill.jsx";
 
-function DisplaySubSkills({ subSkills, skillId }) {
+function DisplaySubSkills({ subSkills, skillId, setSubSkills, loadStart }) {
   return (
     subSkills &&
     subSkills
       .filter((subSkill) => subSkill.skills_id === skillId)
       .map((subSkill) => (
-        <div key={subSkill.id} className="sub-skills-content">
-          <div className="ckeckbox">
-            <input type="checkbox" checked={subSkill.validated}></input>
-          </div>
-          {subSkill.description}
-          <DeleteSkill />
-        </div>
+        <DisplaySubSkill
+          key={subSkill.id}
+          subSkills={subSkills}
+          subSkill={subSkill}
+          setSubSkills={setSubSkills}
+          loadStart={loadStart}
+        ></DisplaySubSkill>
       ))
   );
 }
