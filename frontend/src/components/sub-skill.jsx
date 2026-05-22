@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { updateSubSkill } from "../api/call-api";
 
-function DisplaySubSkill({ subSkill, subSkills, setSubSkills }) {
+function DisplaySubSkill({ subSkill, subSkills, setSubSkills, loadStart }) {
   const [isValidated, setValidated] = useState(subSkill.validated);
 
   async function handleChange(e) {
@@ -28,7 +28,7 @@ function DisplaySubSkill({ subSkill, subSkills, setSubSkills }) {
         ></input>
       </div>
       {subSkill.description}
-      <DeleteSkill />
+      <DeleteSkill subSkillId={subSkill.id} loadStart={loadStart} />
     </div>
   );
 }

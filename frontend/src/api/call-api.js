@@ -50,3 +50,10 @@ export async function addSubSkill(skillId, description, validated) {
   });
   return response.json();
 }
+
+export async function deleteSubSkill(id) {
+  const response = await fetch(`http://localhost:3000/sub_skills/${id}`, {
+    method: "DELETE",
+  });
+  return response.json();
+}

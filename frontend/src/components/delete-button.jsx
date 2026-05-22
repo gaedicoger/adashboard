@@ -1,8 +1,15 @@
+import { deleteSubSkill } from "../api/call-api";
 import deleteIcon from "../assets/delete-icon.png";
 
-function DeleteSkill() {
+function DeleteSkill({ subSkillId, loadStart }) {
   return (
-    <div className="icon-btn delete-btn">
+    <div
+      className="icon-btn delete-btn"
+      onClick={async () => {
+        await deleteSubSkill(subSkillId);
+        loadStart();
+      }}
+    >
       <img src={deleteIcon}></img>
     </div>
   );
