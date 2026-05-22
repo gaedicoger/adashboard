@@ -35,6 +35,12 @@ body {
   min-height: 100vh;
 }
 
+* {
+  cursor:
+    url("/cursor/sword.cur") 0 0,
+    auto;
+}
+
 /* ─── LAYOUT PRINCIPAL ───────────────────────────────── */
 #root {
   display: flex;
@@ -62,4 +68,23 @@ body {
 .skills-title {
   font-family: var(--font-retro);
   font-size: 30px;
+}
+
+.app-container {
+  margin: 10px;
+  border: var(--border-bright);
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+  width: 100%;
+}
+
+.app-title {
+  font-family: var(--font-pixel);
+  font-size: 20px;
+  color: var(--color-primary);
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
 }

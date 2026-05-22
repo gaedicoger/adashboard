@@ -7,8 +7,13 @@
   position: sticky;
   top: 20px;
   height: fit-content;
+  align-self: flex-start;
+  margin-top: 55px;
 }
 
+.avatar {
+  border: solid var(--color-accent) 1px;
+}
 .avatar img {
   image-rendering: pixelated;
   width: 160px;

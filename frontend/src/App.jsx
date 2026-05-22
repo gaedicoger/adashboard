@@ -21,14 +21,18 @@ function App() {
 
   return (
     <>
-      <div className="app-layout">
-        <CharacterPanel />
-        <DisplaySkills
-          skills={skills}
-          subSkills={subSkills}
-          setSubSkills={setSubSkills} //prop drilling pour mettre à jour le tableau en local
-          loadStart={loadStart} //prop drilling pour refetch a chaque ajout de subskills
-        />
+      <div className="app-container">
+        {" "}
+        <h1 className="app-title">Gaéd</h1>
+        <div className="app-layout">
+          <CharacterPanel />
+          <DisplaySkills
+            skills={skills}
+            subSkills={subSkills}
+            setSubSkills={setSubSkills} //prop drilling pour mettre à jour le tableau en local
+            loadStart={loadStart} //prop drilling pour refetch a chaque ajout de subskills
+          />
+        </div>
       </div>
     </>
   );
