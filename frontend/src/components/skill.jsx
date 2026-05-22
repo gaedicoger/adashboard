@@ -1,38 +1,48 @@
+//============================== SKILL ========================================
+
+//IMPORTS:
 import { useState } from "react";
-import DisplaySubSkills from "./sub-skills";
-import AddSkill from "./add-button";
-import ToggleSkills from "./toggle-skills";
-import ProgressBar from "./progress-bar";
+import SubSkills from "./display-sub-skills.jsx";
+import AddSubSkill from "./add-button.jsx";
+import ToggleButton from "./toggle-button.jsx";
+import ProgressBar from "./progress-bar.jsx";
+import "./css/skill.css";
 
-import "./skill.css";
-
+/**
+ * Composant: Afficher une compétence, sa barre de progression et son bouton toggle (liste de subskills)
+ * @param {Object} skill - La compétence à afficher
+ * @param {Array} subSkills - La liste complète des subskills
+ * @param {Function} setSubSkills - //! PROP DRILLING — mise à jour du tableau depuis App.jsx
+ * @param {Function} loadStart - //! PROP DRILLING & REFETCH depuis App.jsx
+ * @returns {JSX.Element}
+ */
 function Skill({ skill, subSkills, setSubSkills, loadStart }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); //Usestate pour le bouton Toogle
 
   const subSkillsList = subSkills.filter(
     (subSkill) => subSkill.skills_id === skill.id,
-  );
-  console.log("La liste des subskills par id:", subSkillsList);
-  const total = subSkillsList.length;
-  console.log("Total de subSkills liés:", total);
+  ); //On stocker le tableau filtré des subskills triées par compétence correspondante
+  const total = subSkillsList.length; //On stocke la longeur du tableau des subskills
   const validated = subSkillsList.filter(
     (subSkill) => subSkill.validated === true,
-  ).length;
-  console.log("Total validés:", validated);
-  const percentage = (validated / total) * 100;
-  console.log("Pourcentage", percentage);
+  ).length; //On stocke combien de subskills sont validées
+  const percentage = (validated / total) * 100; //Calcul du pourcentage de subskills validées
 
   return (
     <div key={skill.id} className="skill-content">
       <div className="skill-title">{skill.name}</div>
+      {/* Barre de progression à laquelle on passe le pourcentage */}
       <ProgressBar percentage={percentage} />
-      <ToggleSkills isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
+      {/* Si ouvert : affiche le bouton d'ajout et la liste des subskills */}
+      <ToggleButton isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
       {isOpen && (
         <>
           <div className="add-skills-contener">
-            <AddSkill skillId={skill.id} loadStart={loadStart} />
+            {/*! PROP DRILLING & REFETCH — skillId et loadStart descendent jusqu'à AddSkillModal */}
+            <AddSubSkill skillId={skill.id} loadStart={loadStart} />
           </div>
-          <DisplaySubSkills
+          {/*! PROP DRILLING & REFETCH— skillId et loadStart descendent jusqu'à AddSkillModal */}
+          <SubSkills
             subSkills={subSkills}
             skillId={skill.id}
             setSubSkills={setSubSkills}

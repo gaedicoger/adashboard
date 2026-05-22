@@ -1,11 +1,20 @@
+// =============================ADD BUTTON======================================
+
+// IMPORTS :
 import { useState } from "react";
 import AddSkillModal from "./add-skill-modal";
 import addIcon from "../assets/add-icon.png";
+import "./css/add-button.css";
 
-import "./add-button.css";
+/**
+ * Composant Bouton ajouter une subkills
+ * @param {number} skillId - L'id de la compétence parente
+ * @param {Function} loadStart - ! PROP DRILLING & REFETCH — depuis App.jsx
+ * @returns {JSX.Element}
+ */
 
-function AddSkill({ skillId, loadStart }) {
-  const [isOpen, setIsOpen] = useState(false);
+function AddSubSkill({ skillId, loadStart }) {
+  const [isOpen, setIsOpen] = useState(false); //Use state du bouton ajout
 
   return (
     <>
@@ -13,6 +22,7 @@ function AddSkill({ skillId, loadStart }) {
         <div className="icon-btn">
           <img src={addIcon} onClick={() => setIsOpen(!isOpen)} />
         </div>
+        {/* Si isOpen est true : affiche le pop up d'ajout */}
         {isOpen && (
           <AddSkillModal
             skillId={skillId}
@@ -25,4 +35,4 @@ function AddSkill({ skillId, loadStart }) {
   );
 }
 
-export default AddSkill;
+export default AddSubSkill;

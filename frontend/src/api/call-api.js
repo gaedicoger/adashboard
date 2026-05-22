@@ -7,7 +7,8 @@ export const API_SUB_SKILLS = `http://localhost:3000/sub_skills`;
 // ==============================CALL API=======================================
 
 /**
- * Appel de l'API Patrimoine arboré de Nantes métropole
+ * Récupère toutes les compétences depuis l'API
+ * @returns {Promise<Array>} La liste des compétences
  */
 export async function callSkills() {
   try {
@@ -19,6 +20,10 @@ export async function callSkills() {
   }
 }
 
+/**
+ * Récupère toutes les sous-compétences depuis l'API
+ * @returns {Promise<Array>} La liste des subskills
+ */
 export async function callSubSkills() {
   try {
     const response = await fetch(API_SUB_SKILLS);
@@ -29,6 +34,12 @@ export async function callSubSkills() {
   }
 }
 
+/**
+ * Met à jour la validation d'une subskill
+ * @param {number} id - L'id de la subskill
+ * @param {boolean} validated - Le nouvel état de validation
+ * @returns {Promise<Object>} La subskill mise à jour
+ */
 export async function updateSubSkill(id, validated) {
   const response = await fetch(`http://localhost:3000/sub_skills/${id}`, {
     method: "PUT",
@@ -40,6 +51,13 @@ export async function updateSubSkill(id, validated) {
   return response.json();
 }
 
+/**
+ * Ajoute une nouvelle subskill
+ * @param {number} skillId - L'id de la compétence parente
+ * @param {string} description - La description de la subskill
+ * @param {boolean} validated - L'état de validation initial (false par défaut)
+ * @returns {Promise<Object>} La subskill créée
+ */
 export async function addSubSkill(skillId, description, validated) {
   const response = await fetch(`http://localhost:3000/sub_skills/`, {
     method: "POST",
@@ -51,6 +69,11 @@ export async function addSubSkill(skillId, description, validated) {
   return response.json();
 }
 
+/**
+ * Supprime une subskill
+ * @param {number} id - L'id de la subskill à supprimer
+ * @returns {Promise<Object>} La subskill supprimée
+ */
 export async function deleteSubSkill(id) {
   const response = await fetch(`http://localhost:3000/sub_skills/${id}`, {
     method: "DELETE",

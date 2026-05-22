@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>📋 Adashboard</h1>
+<p>Projet scolaire réalisé dans le cadre de la formation <strong>Développeuse Fullstack</strong> à l'école ADA.</p>
+<p>Adashboard est une application web de suivi de compétences sous forme de <strong>fiche personnage RPG</strong>.<br>
+Chaque élève peut visualiser ses compétences, suivre sa progression et gérer ses sous-compétences.</p>
+<hr>
+<h2>🛠️ Stack technique</h2>
+<h3>Frontend</h3>
+<ul>
+<li><strong>React</strong> (Vite)</li>
+<li><strong>CSS</strong> custom avec variables (thème pixel art / RPG)</li>
+<li>Polices : <code>Press Start 2P</code> &amp; <code>VT323</code> (Google Fonts)</li>
+</ul>
+<h3>Backend</h3>
+<ul>
+<li><strong>Node.js</strong> avec <strong>Express</strong></li>
+<li><strong>PostgreSQL</strong> via <code>pg-pool</code></li>
+</ul>
+<hr>
+<h2>⚙️ Installation</h2>
+<h3>Prérequis</h3>
+<ul>
+<li>Node.js</li>
+<li>pnpm</li>
+<li>Docker (pour PostgreSQL)</li>
+</ul>
+<h3>1. Cloner le projet</h3>
+<pre class="prettyprint source lang-bash"><code>git clone
+cd adashboard
+</code></pre>
+<h3>2. Lancer la base de données</h3>
+<pre class="prettyprint source lang-bash"><code>docker compose up -d
+</code></pre>
+<h3>3. Initialiser la base de données</h3>
+<pre class="prettyprint source lang-bash"><code>psql -U ton_utilisateur -d adashboard -f db/migration-up.sql
+psql -U ton_utilisateur -d adashboard -f db/seed.sql
+</code></pre>
+<h3>4. Installer les dépendances</h3>
+<pre class="prettyprint source lang-bash"><code># Backend
+cd backend
+pnpm install
+
+# Frontend
+cd ../frontend
+pnpm install
+</code></pre>
+<h3>5. Configurer les variables d'environnement</h3>
+<p>Créer un fichier <code>.env</code> dans le dossier <code>backend</code> :</p>
+<pre class="prettyprint source lang-env"><code>DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=adashboard
+DB_USER=ton_utilisateur
+DB_PASSWORD=ton_mot_de_passe
+</code></pre>
+<h3>6. Lancer l'application</h3>
+<pre class="prettyprint source lang-bash"><code># Backend (depuis le dossier backend)
+pnpm run start
+
+# Frontend (depuis le dossier frontend)
+pnpm run dev
+</code></pre>
+<p>Le frontend est accessible sur <code>http://localhost:5173</code>
+Le backend tourne sur <code>http://localhost:3000</code></p>
+<hr>
+<h2>🎮 Fonctionnalités</h2>
+<h3>Compétences</h3>
+<ul>
+<li>Affichage de toutes les compétences avec leur barre de progression</li>
+<li>La progression se calcule automatiquement selon les sous-compétences validées</li>
+</ul>
+<h3>Sous-compétences</h3>
+<ul>
+<li>✅ <strong>Valider</strong> une sous-compétence via une checkbox</li>
+<li>➕ <strong>Ajouter</strong> une sous-compétence via un formulaire modal</li>
+<li>🗑️ <strong>Supprimer</strong> une sous-compétence</li>
+</ul>
+<h3>Panneau personnage</h3>
+<ul>
+<li>Avatar animé (pixel art)</li>
+<li>Système de <strong>distribution de points de talents</strong> (40 points à distribuer, max 10 par talent)</li>
+<li>Talents : 💻 Code, 🧠 Logique, 💪 Résilience, ☕ Caféine, 🐛 Debug, ✨ Créativité</li>
+</ul>
+<hr>
+<h2>🗂️ Structure du projet</h2>
+<pre class="prettyprint source"><code>adashboard/
+├── backend/
+│   └── src/
+│       ├── routes/
+│       │   ├── skills.js
+│       │   └── sub_skills.js
+│       └── db.js
+├── db/
+│   ├── migration-up.sql
+│   ├── migration-down.sql
+│   ├── queries.sql
+│   └── seed.sql
+└── frontend/
+    └── src/
+        ├── api/
+        │   └── call-api.js
+        ├── assets/
+        ├── components/
+        │   ├── skill.jsx
+        │   ├── display-skills.jsx
+        │   ├── sub-skill.jsx
+        │   ├── display-sub-skills.jsx
+        │   ├── add-button.jsx
+        │   ├── add-skill-modal.jsx
+        │   ├── delete-button.jsx
+        │   ├── progress-bar.jsx
+        │   ├── toggle-button.jsx
+        │   ├── character-panel.jsx
+        │   └── talent-score.jsx
+        └── App.jsx
+</code></pre>
+<hr>
+<h2>👩‍💻 Auteure</h2>
+<p>Projet réalisé par <strong>Gaed</strong> — Formation Développeuse Fullstack @ ADA</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AddSkillModal">AddSkillModal</a></li><li><a href="global.html#AddSubSkill">AddSubSkill</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#CharacterPanel">CharacterPanel</a></li><li><a href="global.html#DeleteSkill">DeleteSkill</a></li><li><a href="global.html#DisplaySkills">DisplaySkills</a></li><li><a href="global.html#DisplaySubSkills">DisplaySubSkills</a></li><li><a href="global.html#ProgressBar">ProgressBar</a></li><li><a href="global.html#Skill">Skill</a></li><li><a href="global.html#SubSkill">SubSkill</a></li><li><a href="global.html#TalentScore">TalentScore</a></li><li><a href="global.html#ToggleButton">ToggleButton</a></li><li><a href="global.html#addSubSkill">addSubSkill</a></li><li><a href="global.html#callSkills">callSkills</a></li><li><a href="global.html#callSubSkills">callSubSkills</a></li><li><a href="global.html#deleteSubSkill">deleteSubSkill</a></li><li><a href="global.html#updateSubSkill">updateSubSkill</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Fri May 22 2026 17:46:45 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
