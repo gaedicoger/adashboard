@@ -10,7 +10,7 @@ dotenv.config();
 // on configure la connexion à la bdd avec les variables d'environnement
 const pool = new Pool({
   user: process.env.POSTGRES_USER,
-  host: "localhost",
+  host: process.env.POSTGRES_HOST,
   database: process.env.POSTGRES_DB,
   password: process.env.POSTGRES_PASSWORD,
   port: process.env.POSTGRES_PORT,
@@ -25,4 +25,5 @@ pool
   .catch((err) => {
     console.error("🔴 Error connecting to the database", err);
   });
+
 export default pool;

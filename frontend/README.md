@@ -65,6 +65,7 @@ pnpm install
 ### 5. Configurer les variables d'environnement
 
 Créer un fichier `.env` dans le dossier `backend` :
+Choisir les dientifiants et mot de passe pour la bdd locale :
 
 ```env
 DB_HOST=localhost
