@@ -6,9 +6,6 @@ CREATE TABLE IF NOT EXISTS public.skills
     PRIMARY KEY (id)
 );
 
-ALTER TABLE IF EXISTS public.skills
-    OWNER to admin;
-
 -- Créer la table principale pour les ressources pédagogiques:
 CREATE TABLE IF NOT EXISTS public.sub_skills
 (
@@ -22,5 +19,3 @@ CREATE TABLE IF NOT EXISTS public.sub_skills
         ON DELETE CASCADE
 );
 
-ALTER TABLE IF EXISTS public.sub_skills
-    OWNER to admin;

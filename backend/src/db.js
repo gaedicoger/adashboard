@@ -8,7 +8,13 @@ import { Pool } from "pg";
 dotenv.config();
 
 // on configure la connexion à la bdd avec les variables d'environnement
-const pool = new Pool({
+const pool = 
+  ? new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {rejectUnauthorized: false},
+})
+
+  : new Pool({
   user: process.env.POSTGRES_USER,
   host: process.env.POSTGRES_HOST,
   database: process.env.POSTGRES_DB,
