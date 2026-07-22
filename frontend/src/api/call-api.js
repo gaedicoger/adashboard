@@ -1,9 +1,11 @@
 // ==============================CALL API=======================================
 
 //Variables courantes :
+export const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:3000";
 
-export const API_SKILLS = `http://localhost:3000/skills`;
-export const API_SUB_SKILLS = `http://localhost:3000/sub_skills`;
+export const API_SKILLS = `${API_BASE_URL}/skills`;
+export const API_SUB_SKILLS = `${API_BASE_URL}/sub_skills`;
 // ==============================CALL API=======================================
 
 /**
@@ -41,7 +43,7 @@ export async function callSubSkills() {
  * @returns {Promise<Object>} La subskill mise à jour
  */
 export async function updateSubSkill(id, validated) {
-  const response = await fetch(`http://localhost:3000/sub_skills/${id}`, {
+  const response = await fetch(`${API_SUB_SKILLS}/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -59,7 +61,7 @@ export async function updateSubSkill(id, validated) {
  * @returns {Promise<Object>} La subskill créée
  */
 export async function addSubSkill(skillId, description, validated) {
-  const response = await fetch(`http://localhost:3000/sub_skills/`, {
+  const response = await fetch(`${API_SUB_SKILLS}/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -75,7 +77,7 @@ export async function addSubSkill(skillId, description, validated) {
  * @returns {Promise<Object>} La subskill supprimée
  */
 export async function deleteSubSkill(id) {
-  const response = await fetch(`http://localhost:3000/sub_skills/${id}`, {
+  const response = await fetch(`${API_SUB_SKILLS}/${id}`, {
     method: "DELETE",
   });
   return response.json();
